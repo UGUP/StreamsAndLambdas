@@ -25,6 +25,7 @@ public class MainMethod {
         getPriceOfCars(cars);
         mostExpensiveCar(cars);
         findSumOfAll(integers);
+        sumOfEvenNumbers(integers);
 
     }
 
@@ -62,6 +63,11 @@ public class MainMethod {
     public static void findSumOfAll(List<Integer> list){
        int totalSum= list.stream().reduce(0,(sum,ele)->sum+ele);
         System.out.println(" the total sum is "+totalSum);
+    }
+
+    public static void sumOfEvenNumbers(List<Integer> list){
+       int totalSum=list.stream().filter(num->num%2==0).reduce(0,(sum,ele)->sum+ele);
+        System.out.println(" The sum of even numbers are "+totalSum);
     }
 
 }
